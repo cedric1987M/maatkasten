@@ -9,7 +9,7 @@ import {
   DialogTitle,
 } from "@/components/ui/dialog";
 
-interface LoginDialogProps {
+interface ManusDialogProps {
   title?: string;
   logo?: string;
   open?: boolean;
@@ -18,10 +18,6 @@ interface LoginDialogProps {
   onClose?: () => void;
 }
 
-/**
- * Generic login dialog component
- * Previously called ManusDialog, now works with any authentication provider
- */
 export function ManusDialog({
   title,
   logo,
@@ -29,7 +25,7 @@ export function ManusDialog({
   onLogin,
   onOpenChange,
   onClose,
-}: LoginDialogProps) {
+}: ManusDialogProps) {
   const [internalOpen, setInternalOpen] = useState(open);
 
   useEffect(() => {
@@ -74,7 +70,7 @@ export function ManusDialog({
             </DialogTitle>
           ) : null}
           <DialogDescription className="text-sm text-[#858481] leading-5 tracking-[-0.154px]">
-            Please login to continue
+            Please login with Manus to continue
           </DialogDescription>
         </div>
 
@@ -84,13 +80,10 @@ export function ManusDialog({
             onClick={onLogin}
             className="w-full h-10 bg-[#1a1a19] hover:bg-[#1a1a19]/90 text-white rounded-[10px] text-sm font-medium leading-5 tracking-[-0.154px]"
           >
-            Login
+            Login with Manus
           </Button>
         </DialogFooter>
       </DialogContent>
     </Dialog>
   );
 }
-
-// Export as both names for backward compatibility
-export { ManusDialog as LoginDialog };

@@ -42,7 +42,6 @@ export function useAuth(options?: UseAuthOptions) {
   }, [logoutMutation, utils]);
 
   const state = useMemo(() => {
-    // Store user info in localStorage for persistence
     localStorage.setItem(
       "app-user-info",
       JSON.stringify(meQuery.data)
