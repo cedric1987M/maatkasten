@@ -7,6 +7,7 @@ import { ThemeProvider } from "./contexts/ThemeContext";
 import Home from "./pages/Home";
 import ProductSelector from "./pages/ProductSelector";
 import Configurator from "./pages/Configurator";
+import ConfiguratorNew from "./pages/ConfiguratorNew";
 import Checkout from "./pages/Checkout";
 import AdminDashboard from "./pages/AdminDashboard";
 import Templates from "./pages/Templates";
@@ -17,9 +18,10 @@ function Router() {
   // make sure to consider if you need authentication for certain routes
   return (
     <Switch>
+      <Route path={"/"} component={Home} />
       <Route path={"/product-selector"} component={ProductSelector} />
       <Route path={"/templates"} component={Templates} />
-      <Route path={"/configurator"} component={Configurator} />
+      <Route path={"/configurator"} component={ConfiguratorNew} />
       <Route path={"/checkout"} component={Checkout} />
       <Route path={"/quote-request"} component={QuoteRequest} />
       <Route path={"/saved-configurations"} component={SavedConfigurations} />
